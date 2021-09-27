@@ -1,0 +1,127 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.79.0">
+<title th:text="${title}">Starter Template for Bootstrap ·
+	Bootstrap v5.0</title>
+
+<link rel="canonical"
+	href="https://getbootstrap.jp/docs/5.0/examples/starter-template/">
+
+<!-- Bootstrap core CSS -->
+<!-- 
+<link
+	href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
+ -->
+<link
+	href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css
+	rel="stylesheet">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon"
+	href="/docs/5.0/assets/img/favicons/apple-touch-icon.png"
+	sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png"
+	sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png"
+	sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon"
+	href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg"
+	color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+
+<!-- Custom styles for this template -->
+<link href="starter-template.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div th:replace="~{block/header::headerA}"></div>
+	<main role="main" class="container">
+
+		<div class="starter-template">
+			<h1 th:text="${title}">Bootstrap starter template</h1>
+		</div>
+
+		<p>入力内容をご確認ください</p>
+		<div th:object="${contentsForm}">
+			<div class="mb-5">
+				<ul class="list-group">
+					<li th:text="*{content}" 　class="list-group-item">Dapibus ac
+						facilisis in</li>
+					<li th:text="*{cause}" 　class="list-group-item">Morbi leo
+						risus</li>
+					<li th:text="*{Category}" 　class="list-group-item">Morbi leo
+						risus</li>
+					<li th:text="*{Desire}" 　class="list-group-item">Morbi leo
+						risus</li>
+				</ul>
+			</div>
+			<form method="post" action="#" th:action="@{/contents/form}">
+				<input type="hidden" name="content" th:value="*{content}">
+				<input type="hidden" name="cause" th:value="*{cause}">
+				<input type="hidden" name="Category" th:value="*{Category}">
+				<input type="hidden" name="Desire" th:value="*{Desire}">
+				<button type="submit" class="btn btn-primary">戻る</button>
+			</form>
+			<form method="post" action="#" th:action="@{/contents/complete}">
+				<input type="hidden" name="content" th:value="*{content}">
+				<input type="hidden" name="cause" th:value="*{cause}">
+				<input type="hidden" name="Category" th:value="*{Category}">
+				<input type="hidden" name="Desire" th:value="*{Desire}">
+				<input type="hidden" name="updateFlag" th:value=${updateFlag}>
+				<input type="hidden" name="id" th:value=${id}>
+				<button type="submit" class="btn btn-primary">送信する</button>
+			</form>
+		</div>
+
+	</main>
+	<!-- /.container -->
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script>
+ -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="@{/js/jquery-slim.min.js}"><\/script>')
+	</script>
+	<script src="../../assets/js/vendor/popper.min.js"
+		th:src="@{/js/popper.min.js}"></script>
+	<script src="../../dist/js/bootstrap.min.js"
+		th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

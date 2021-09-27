@@ -1,0 +1,10 @@
+CREATE TABLE Contents
+(
+   id INT NOT NULL AUTO_INCREMENT,
+   content VARCHAR(1000) NOT NULL,
+   cause VARCHAR(1000) NOT NULL,
+   category VARCHAR(256),
+   desire VARCHAR(256),
+   created DATETIME NOT NULL,
+   PRIMARY KEY(id)
+);
