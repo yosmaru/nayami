@@ -7,6 +7,7 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
@@ -29,4 +30,14 @@ test {
 	useJUnitPlatform()
 }
 
+jar {
+  baseName = 'spring-boot-nayami'
+  version =  '0.1.0'
+}
+
 defaultTasks "clean", "build"
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.4'
+}
+
