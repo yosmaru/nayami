@@ -7,4 +7,4 @@ CREATE TABLE Contents
    desire VARCHAR(256),
    created DATETIME NOT NULL,
    PRIMARY KEY(id)
-) DEFAULT CHARSET=utf8;
+)
