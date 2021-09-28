@@ -36,8 +36,3 @@ jar {
 }
 
 defaultTasks "clean", "build"
-
-task wrapper(type: Wrapper) {
-  gradleVersion = '2.4'
-}
-
