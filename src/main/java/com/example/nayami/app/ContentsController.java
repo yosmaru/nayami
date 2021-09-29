@@ -122,7 +122,7 @@ public class ContentsController {
 		contentsForm.setCause(contents.getCause());
 		contentsForm.setCategory(contents.getCategory());
 		contentsForm.setDesire(contents.getDesire());
-		model.addAttribute("title", "�ҏW");
+		model.addAttribute("title", "編集");
 	    model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
 	    model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
 	    model.addAttribute("id", id);
