@@ -1,20 +1,9 @@
 package com.example.nayami.common;
 
-import java.util.EnumMap;
-
 public enum Category {
-	GREEDY("æÃ—~"),
-	ANGER("“{‚è"),
-	DELUSION("–Ï‘z");
-	
-//    private final static EnumMap<Category, String> categoryMap;
-//    
-//    static {
-//    	categoryMap = new EnumMap<Category, String>(Category.class);
-//    	categoryMap.put(GREEDY, "æÃ—~");
-//    	categoryMap.put(ANGER, "“{‚è");
-//    	categoryMap.put(DELUSION, "–Ï‘z");
-//    }
+	GREEDY("è²ªæ¬²"),
+	ANGER("æ€’ã‚Š"),
+	DELUSION("å¦„æƒ³");
 
   private final String category;
 

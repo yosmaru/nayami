@@ -1,32 +1,13 @@
 package com.example.nayami.common;
 
-import java.util.EnumMap;
-
 public enum Desire {
-	SURVIVAL("¶‘¶—~"),
-	SAFETY("ˆÀ‘S—~"),
-	SEX("«—~"),
-	SLEEP("‡–°—~"),
-	LAZY("‘Ó‘Ä—~"),
-	PLEASURE("Š´Šy—~"),
-	APPROVAL("³”F—~");
-
-//	private final static EnumMap<Desire, String> desireMap;
-//    
-//    static {
-//    	desireMap = new EnumMap<Desire, String>(Desire.class);
-//    	desireMap.put(SURVIVAL, "¶‘¶—~");
-//    	desireMap.put(SAFETY, "ˆÀ‘S—~");
-//    	desireMap.put(SEX, "«—~");
-//    	desireMap.put(SLEEP, "‡–°—~");
-//    	desireMap.put(LAZY, "‘Ó‘Ä—~");
-//    	desireMap.put(PLEASURE, "Š´Šy—~");
-//    	desireMap.put(APPROVAL, "³”F—~");
-//    }
-//
-//    public static String toString(Desire desire){
-//        return desireMap.get(desire);
-//    }
+	SURVIVAL("ç”Ÿå­˜æ¬²"),
+	SAFETY("å®‰å…¨æ¬²"),
+	SEX("æ€§æ¬²"),
+	SLEEP("ç¡çœ æ¬²"),
+	LAZY("æ€ æƒ°æ¬²"),
+	PLEASURE("æ„Ÿæ¥½æ¬²"),
+	APPROVAL("æ‰¿èªæ¬²");
 
 	private final String desire;
 
@@ -37,9 +18,5 @@ public enum Desire {
     public String getString(){
         return this.desire;
     }
-
-	
-
-
 	
 }

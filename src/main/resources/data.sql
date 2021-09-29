@@ -1,5 +1,5 @@
 INSERT INTO Contents(content, cause, category, desire, created)
-VALUES('‚ ‚ ‚ ', '‚¢‚¢‚¢', '“{‚è', '³”F—~', '2019-11-12 08:34:19');
+VALUES('ã‚ã„ã†ãˆãŠ', 'ã‚ã‚ã‚ã‚', 'æ€’ã‚Š', 'æ‰¿èªæ¬²', '2019-11-12 08:34:19');
 
 INSERT INTO Contents(content, cause, category, desire, created)
-VALUES('ƒAƒAƒA', 'ƒCƒCƒC', '–Ï‘z', '‘Ó‘Ä—~', '2020-11-22 16:45:24');
+VALUES('ã‹ããã‘ã“', 'ã‹ã‹ã‹ã‹', 'å¦„æƒ³', 'æ€ æƒ°æ¬²', '2020-11-22 16:45:24');

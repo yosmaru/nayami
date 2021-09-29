@@ -3,16 +3,11 @@ package com.example.nayami.dao;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
-import com.example.nayami.common.Category;
-import com.example.nayami.common.Desire;
 import com.example.nayami.entity.Contents;
 
 @Repository
@@ -68,15 +63,6 @@ public class ContentsDaoImpl implements ContentsDao {
 				+ "SET content = ?, cause = ?, category = ?, desire = ?, created = ? "
 				+ "WHERE id = ?";
 
-//		Map<String, Object> param = new HashMap<>();
-//		param.put("id", contents.getId());
-//		param.put("content", contents.getContent());
-//		param.put("cause", contents.getCause());
-//		param.put("category", contents.getCategory());
-//		param.put("desire", contents.getDesire());
-//		param.put("created", LocalDateTime.now());
-		
-//		jdbcTemplate.update(sql, param);
 		jdbcTemplate.update(sql, contents.getContent(), contents.getCause(),
 				contents.getCategory(), contents.getDesire(), LocalDateTime.now(),
 				contents.getId());
