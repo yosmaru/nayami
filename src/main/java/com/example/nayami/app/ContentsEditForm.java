@@ -3,9 +3,6 @@ package com.example.nayami.app;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.example.nayami.common.Category;
-import com.example.nayami.common.Desire;
-
 public class ContentsEditForm {
 
 	@Size(min = 1, max = 200, message = "Please input 200characters or less")

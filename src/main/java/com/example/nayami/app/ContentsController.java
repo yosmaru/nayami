@@ -32,9 +32,6 @@ public class ContentsController {
 		this.contentsService = contentsService;
 	}
 
-	/**
-	 * selectÇÃï\é¶Ç…égópÇ∑ÇÈÉAÉCÉeÉÄ
-	 */
 	final static Map<String, String> SELECT_ITEMS_CATEGORY = Collections.unmodifiableMap(new LinkedHashMap<String, String>() {
 		private static final long serialVersionUID = 1L;
 
@@ -63,7 +60,7 @@ public class ContentsController {
 		List<Contents> list = contentsService.getAll();
 
 		model.addAttribute("contentsList", list);
-		model.addAttribute("title", "àÍóó");
+		model.addAttribute("title", "‰∏ÄË¶ß");
 
 		return "contents/index_boot";
 
@@ -71,44 +68,18 @@ public class ContentsController {
 
 	@GetMapping("/create")
 	public String create(ContentsForm contentsForm, Model model) {
-		model.addAttribute("title", "êVãKçÏê¨");
+		model.addAttribute("title", "Êñ∞Ë¶è‰ΩúÊàê");
 	    model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
 	    model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
 		model.addAttribute("updateFlag", false);
 		return "contents/create_boot";
 	}
-
-// ñ¢égóp
-//	@PostMapping("/createGoBack")
-//	public String createGoBack(ContentsForm contentsForm, Model model) {
-//		model.addAttribute("title", "êVãKçÏê¨");
-//	    model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
-//	    model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
-//		model.addAttribute("updateFlag", false);
-//		return "contents/form_boot";
-//	}
-
-// ñ¢égóp
-//	@PostMapping("/confirm")
-//	public String confirm(@Validated ContentsForm confentsForm, @RequestParam boolean updateFlag,
-//			@RequestParam int id, BindingResult result, Model model) {
-//		if (result.hasErrors()) {
-//			model.addAttribute("title", "Contents Form");
-//		    model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
-//		    model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
-//			return "contents/form_boot";
-//		}
-//		model.addAttribute("title", "Confirm");
-//		model.addAttribute("updateFlag", updateFlag);
-//		model.addAttribute("id", id);
-//		return "contents/confirm_boot";
-//	}
 	
 	@PostMapping("/complete")
 	public String complete(@Validated ContentsForm contentsForm, BindingResult result,
 			Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("title", "êVãKçÏê¨");
+			model.addAttribute("title", "Êñ∞Ë¶è‰ΩúÊàê");
 			model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
 			model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
 			return "contents/create_boot";
@@ -127,13 +98,13 @@ public class ContentsController {
 	public String complete(@Validated ContentsForm contentsForm, BindingResult result,
 			Model model, @PathVariable int id) {
 		if (result.hasErrors()) {
-			model.addAttribute("title", "ï“èW");
+			model.addAttribute("title", "Á∑®ÈõÜ");
 			model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
 			model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
 			return "contents/edit_boot";
 		}		
 		Contents contents = new Contents();
-		//ï“èWÇÃèÍçáÅAidÇÉZÉbÉg
+
 		contents.setId(id);
 		contents.setContent(contentsForm.getContent());
 		contents.setCause(contentsForm.getCause());
@@ -151,7 +122,7 @@ public class ContentsController {
 		contentsForm.setCause(contents.getCause());
 		contentsForm.setCategory(contents.getCategory());
 		contentsForm.setDesire(contents.getDesire());
-		model.addAttribute("title", "ï“èW");
+		model.addAttribute("title", "ÔøΩ“èW");
 	    model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
 	    model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
 	    model.addAttribute("id", id);
