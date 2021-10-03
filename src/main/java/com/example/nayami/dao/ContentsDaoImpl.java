@@ -5,9 +5,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
 import com.example.nayami.entity.Contents;
 
 @Repository
@@ -37,7 +39,7 @@ public class ContentsDaoImpl implements ContentsDao {
 			contents.setCause((String)result.get("cause"));
 			contents.setCategory((String)result.get("category"));
 			contents.setDesire((String)result.get("desire"));
-			contents.setCreated(((Timestamp)result.get("created")).toLocalDateTime());
+			contents.setCreated((Timestamp)result.get("created"));
 			list.add(contents);
 		}
 		return list;
@@ -53,7 +55,7 @@ public class ContentsDaoImpl implements ContentsDao {
 		contents.setCause((String)result.get("cause"));
 		contents.setCategory((String)result.get("category"));
 		contents.setDesire((String)result.get("desire"));
-		contents.setCreated(((Timestamp)result.get("created")).toLocalDateTime());
+		contents.setCreated((Timestamp)result.get("created"));
 		return contents;
 	}
 

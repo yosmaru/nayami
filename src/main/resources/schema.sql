@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS Contents
    cause VARCHAR(1000) NOT NULL,
    category VARCHAR(256),
    desire VARCHAR(256),
-   created DATETIME NOT NULL,
+   created TIMESTAMP NOT NULL,
    PRIMARY KEY(id)
 );

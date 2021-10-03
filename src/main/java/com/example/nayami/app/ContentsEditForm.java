@@ -5,10 +5,10 @@ import javax.validation.constraints.Size;
 
 public class ContentsEditForm {
 
-	@Size(min = 1, max = 200, message = "Please input 200characters or less")
+	@Size(min = 1, max = 200, message = "1文字以上200文字以下で入力してください")
 	@NotNull
 	private String content;
-	@Size(min = 1, max = 200, message = "Please input 200characters or less")
+	@Size(min = 1, max = 200, message = "1文字以上200文字以下で入力してください")
 	private String cause;
 	private String category;
 	private String desire;

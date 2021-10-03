@@ -1,6 +1,6 @@
 package com.example.nayami.entity;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 import javax.validation.constraints.NotNull;
 
@@ -16,7 +16,7 @@ public class Contents {
 	private String cause;
 	private String category;
 	private String desire;
-	private LocalDateTime created;
+	private Timestamp created;
 
 	public int getId() {
 		return id;
@@ -48,10 +48,10 @@ public class Contents {
 	public void setDesire(String desire) {
 		this.desire = desire;
 	}
-	public LocalDateTime getCreated() {
+	public Timestamp getCreated() {
 		return created;
 	}
-	public void setCreated(LocalDateTime created) {
+	public void setCreated(Timestamp created) {
 		this.created = created;
 	}
 
