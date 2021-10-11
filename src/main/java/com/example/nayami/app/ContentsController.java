@@ -54,7 +54,6 @@ public class ContentsController {
 		}
 	});
 
-	
 	@GetMapping
 	public String index(Model model) {
 		List<Contents> list = contentsService.getAll();
@@ -94,7 +93,7 @@ public class ContentsController {
 		return "redirect:/contents";
 	}
 
-	@PostMapping("/complete/{id}")
+	@PostMapping(value="complete/{id}", params="complete")
 	public String complete(@Validated ContentsForm contentsForm, BindingResult result,
 			Model model, @PathVariable int id) {
 		if (result.hasErrors()) {
@@ -114,8 +113,14 @@ public class ContentsController {
 		return "redirect:/contents";
 	}
 
+	@PostMapping(value="complete/{id}", params="goBackIndex")
+	public String goBackIndex(@Validated ContentsForm contentsForm, BindingResult result,
+			Model model, @PathVariable int id) {
+		return "redirect:/contents";
+	}
+
 	
-	@PostMapping("/edit")
+	@PostMapping(value="edit", params="edit")
 	public String edit(@RequestParam int id, ContentsForm contentsForm, Model model) {
 		Contents contents = contentsService.getById(id);
 		contentsForm.setContent(contents.getContent());
@@ -130,9 +135,27 @@ public class ContentsController {
 		return "contents/edit_boot";
 	}
 	
-	@PostMapping("/delete")
+	@PostMapping(value="edit", params="delete")
 	public String delete(@RequestParam int id, Model model) {
 		contentsService.delete(id);
 		return "redirect:/contents";
 	}
+	
+	@PostMapping("/detail")
+	public String detail(@RequestParam int id, ContentsForm contentsForm, Model model) {
+		Contents contents = contentsService.getById(id);
+		contentsForm.setContent(contents.getContent());
+		contentsForm.setCause(contents.getCause());
+		contentsForm.setCategory(contents.getCategory());
+		contentsForm.setDesire(contents.getDesire());
+		model.addAttribute("title", "詳細");
+	    model.addAttribute("id", id);
+		return "contents/detail_boot";
+	}
+
+	@PostMapping(value="edit", params="goBackIndex")
+	public String goBackIndex(@RequestParam int id, Model model) {
+		return "redirect:/contents";
+	}
+
 }
