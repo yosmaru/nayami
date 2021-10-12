@@ -73,7 +73,16 @@ public class ContentsController {
 		model.addAttribute("updateFlag", false);
 		return "contents/create_boot";
 	}
-	
+
+	@PostMapping("/create2")
+	public String create2(@RequestParam String category, ContentsForm contentsForm, Model model) {
+		model.addAttribute("title", "新規作成");
+		model.addAttribute("category", category);
+	    model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
+		model.addAttribute("updateFlag", false);
+		return "contents/create2_boot";
+	}
+
 	@PostMapping("/complete")
 	public String complete(@Validated ContentsForm contentsForm, BindingResult result,
 			Model model) {
@@ -85,10 +94,9 @@ public class ContentsController {
 		}		
 		Contents contents = new Contents();
 
-		contents.setContent(contentsForm.getContent());
-		contents.setCause(contentsForm.getCause());
 		contents.setCategory(contentsForm.getCategory());
 		contents.setDesire(contentsForm.getDesire());
+		contents.setContent(contentsForm.getContent());
 		contentsService.create(contents);
 		return "redirect:/contents";
 	}
@@ -105,10 +113,9 @@ public class ContentsController {
 		Contents contents = new Contents();
 
 		contents.setId(id);
-		contents.setContent(contentsForm.getContent());
-		contents.setCause(contentsForm.getCause());
 		contents.setCategory(contentsForm.getCategory());
 		contents.setDesire(contentsForm.getDesire());
+		contents.setContent(contentsForm.getContent());
 		contentsService.update(contents);
 		return "redirect:/contents";
 	}
@@ -123,10 +130,9 @@ public class ContentsController {
 	@PostMapping(value="edit", params="edit")
 	public String edit(@RequestParam int id, ContentsForm contentsForm, Model model) {
 		Contents contents = contentsService.getById(id);
-		contentsForm.setContent(contents.getContent());
-		contentsForm.setCause(contents.getCause());
 		contentsForm.setCategory(contents.getCategory());
 		contentsForm.setDesire(contents.getDesire());
+		contentsForm.setContent(contents.getContent());
 		model.addAttribute("title", "編集");
 	    model.addAttribute("selectItemsCategory", SELECT_ITEMS_CATEGORY);
 	    model.addAttribute("selectItemsDesire", SELECT_ITEMS_DESIRE);
@@ -144,10 +150,9 @@ public class ContentsController {
 	@PostMapping("/detail")
 	public String detail(@RequestParam int id, ContentsForm contentsForm, Model model) {
 		Contents contents = contentsService.getById(id);
-		contentsForm.setContent(contents.getContent());
-		contentsForm.setCause(contents.getCause());
 		contentsForm.setCategory(contents.getCategory());
 		contentsForm.setDesire(contents.getDesire());
+		contentsForm.setContent(contents.getContent());
 		model.addAttribute("title", "詳細");
 	    model.addAttribute("id", id);
 		return "contents/detail_boot";

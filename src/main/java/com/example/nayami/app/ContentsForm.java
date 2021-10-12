@@ -5,13 +5,14 @@ import javax.validation.constraints.Size;
 
 public class ContentsForm {
 
-	@Size(min = 1, max = 200, message = "1文字以上200文字以下で入力してください")
 	@NotNull
-	private String content;
-	@Size(min = 1, max = 200, message = "1文字以上200文字以下で入力してください")
-	private String cause;
 	private String category;
+	@NotNull
 	private String desire;
+	@Size(max = 200, message = "200文字以下で入力してください")
+	private String content;
+	@Size(max = 200, message = "200文字以下で入力してください")
+	private String cause;
 	private String fSelectCategory;
 	private String fSelectDesire;
 

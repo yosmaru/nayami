@@ -12,10 +12,11 @@ public class Contents {
 	
 	private int id;
 	@NotNull
+	private String category;
+	@NotNull
+	private String desire;
 	private String content;
 	private String cause;
-	private String category;
-	private String desire;
 	private Timestamp created;
 
 	public int getId() {

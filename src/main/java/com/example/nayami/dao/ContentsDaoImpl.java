@@ -24,19 +24,18 @@ public class ContentsDaoImpl implements ContentsDao {
 
 	@Override
 	public void insertContents(Contents contents) {
-		jdbcTemplate.update("INSERT INTO contents(content, cause, category, desire, created) VALUES(?, ?, ?, ?, ?)", contents.getContent(), contents.getCause(), contents.getCategory(), contents.getDesire(), LocalDateTime.now());
+		jdbcTemplate.update("INSERT INTO contents(content, category, desire, created) VALUES(?, ?, ?, ?)", contents.getContent(), contents.getCategory(), contents.getDesire(), LocalDateTime.now());
 	}
 
 	@Override
 	public List<Contents> getAll() {
-		String sql = "SELECT id, content, cause, category, desire, created FROM contents";
+		String sql = "SELECT id, content, category, desire, created FROM contents";
 		List<Map<String, Object>> resultList = jdbcTemplate.queryForList(sql);
 		List<Contents> list = new ArrayList<>();
 		for (Map<String, Object> result : resultList) {
 			Contents contents = new Contents();
 			contents.setId((int)result.get("id"));
 			contents.setContent((String)result.get("content"));
-			contents.setCause((String)result.get("cause"));
 			contents.setCategory((String)result.get("category"));
 			contents.setDesire((String)result.get("desire"));
 			contents.setCreated((Timestamp)result.get("created"));
@@ -47,12 +46,11 @@ public class ContentsDaoImpl implements ContentsDao {
 
 	@Override
 	public Contents getById(int id) {
-		String sql = "SELECT id, content, cause, category, desire, created FROM contents WHERE id=" + id;
+		String sql = "SELECT id, content, category, desire, created FROM contents WHERE id=" + id;
 		Map<String, Object> result = jdbcTemplate.queryForMap(sql);
 		Contents contents = new Contents();
 		contents.setId((int)result.get("id"));
 		contents.setContent((String)result.get("content"));
-		contents.setCause((String)result.get("cause"));
 		contents.setCategory((String)result.get("category"));
 		contents.setDesire((String)result.get("desire"));
 		contents.setCreated((Timestamp)result.get("created"));
@@ -62,10 +60,10 @@ public class ContentsDaoImpl implements ContentsDao {
 	@Override
 	public void updateContents(Contents contents) {
 		String sql = "UPDATE contents "
-				+ "SET content = ?, cause = ?, category = ?, desire = ?, created = ? "
+				+ "SET content = ?, category = ?, desire = ?, created = ? "
 				+ "WHERE id = ?";
 
-		jdbcTemplate.update(sql, contents.getContent(), contents.getCause(),
+		jdbcTemplate.update(sql, contents.getContent(),
 				contents.getCategory(), contents.getDesire(), LocalDateTime.now(),
 				contents.getId());
 	}

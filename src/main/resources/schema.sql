@@ -1,10 +1,10 @@
 CREATE TABLE IF NOT EXISTS Contents
 (
    id INT AUTO_INCREMENT NOT NULL,
-   content VARCHAR(1000) NOT NULL,
-   cause VARCHAR(1000) NOT NULL,
-   category VARCHAR(256),
-   desire VARCHAR(256),
+   category VARCHAR(256) NOT NULL,
+   desire VARCHAR(256) NOT NULL,
+   content VARCHAR(1000) DEFAULT "",
+   cause VARCHAR(1000) DEFAULT "",
    created TIMESTAMP NOT NULL,
    PRIMARY KEY(id)
 );
