@@ -1,5 +1,7 @@
 package com.example.nayami.app;
 
+import java.sql.Timestamp;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -13,6 +15,7 @@ public class ContentsForm {
 	private String content;
 	@Size(max = 200, message = "200文字以下で入力してください")
 	private String cause;
+	private Timestamp created;
 	private String fSelectCategory;
 	private String fSelectDesire;
 
@@ -62,5 +65,13 @@ public class ContentsForm {
 
 	public void setfSelectDesire(String fSelectDesire) {
 		this.fSelectDesire = fSelectDesire;
+	}
+
+	public Timestamp getCreated() {
+		return created;
+	}
+
+	public void setCreated(Timestamp created) {
+		this.created = created;
 	}
 }

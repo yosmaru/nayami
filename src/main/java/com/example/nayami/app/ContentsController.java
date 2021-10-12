@@ -153,6 +153,7 @@ public class ContentsController {
 		contentsForm.setCategory(contents.getCategory());
 		contentsForm.setDesire(contents.getDesire());
 		contentsForm.setContent(contents.getContent());
+		contentsForm.setCreated(contents.getCreated());
 		model.addAttribute("title", "詳細");
 	    model.addAttribute("id", id);
 		return "contents/detail_boot";

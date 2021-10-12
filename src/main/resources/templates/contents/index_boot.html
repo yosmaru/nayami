@@ -68,21 +68,19 @@
 				<thead>
 
 					<tr>
-						<th scope="col">No</th>
+						<th scope="col">登録日付</th>
 						<th scope="col">カテゴリ</th>
 						<th scope="col">欲望</th>
 						<th scope="col">内容</th>
-						<th scope="col">日付</th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="contents : ${contentsList}" th:object=${contents}>
-						<th class="col-md-0" scope="row" th:text="*{id}">1</th>
-						<td class="col-md-2" th:text="*{category}"></td>
-						<td class="col-md-2" th:text="*{desire}"></td>
-						<td class="col-md-3 overflow-auto text-nowrap" style="max-width:100px;" th:text="*{content}"></td>
 						<td class="col-md-2" th:text="*{created}"></td>
+						<td class="col-md-1" th:text="*{category}"></td>
+						<td class="col-md-1" th:text="*{desire}"></td>
+						<td class="col-md-2 overflow-auto text-nowrap" style="max-width:100px;" th:text="*{content}"></td>
 						<td>
 							<form th:action="@{/contents/detail}" method="post">
 								<input type="submit" class="btn btn-outline-primary"
