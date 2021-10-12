@@ -68,12 +68,16 @@
 				th:object="${contentsForm}">
 				
 				<input type="hidden" name="category" th:value="${item.value}">
-				
-				<button type="submit" class="btn btn-primary" th:text=${item.value}></button>
+				<div class="d-grid gap-2 col-6 mx-auto">
+					<button type="submit" class="btn btn-primary btn-lg" th:text=${item.value}></button>
+				</div>
 			</form>
+			<p></p>
 		</div>
 		<p></p>
-		<a href="/contents" class="btn btn-primary">戻る</a>
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<a href="/contents" class="btn btn-secondary btn-lg">一覧に戻る</a>
+		</div>
 
 
 	</main>

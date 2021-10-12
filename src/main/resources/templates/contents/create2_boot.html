@@ -63,22 +63,27 @@
 			<h1 th:text="${title}">Bootstrap starter template</h1>
 		</div>
 
-		<label class="control-label">カテゴリ</label>
-		<p th:text=${category}></p>
-
+		<div align="center">
+			<div class="container-lg h2"><label class="control-label">カテゴリ</label></div>
+			<div class="container-lg h3"><p th:text=${category}></p></div>
+		</div>
+		
 		<div th:each="item : ${selectItemsDesire}">
 			<form method="post" action="#" th:action="@{/contents/complete}"
 				th:object="${contentsForm}">
 				
 				<input type="hidden" name="category" th:value="${category}">
 				<input type="hidden" name="desire" th:value="${item.value}">
-				
-				<button type="submit" class="btn btn-primary" th:text=${item.value}></button>
+				<div class="d-grid gap-2 col-6 mx-auto">
+					<button type="submit" class="btn btn-primary btn-lg" th:text=${item.value}></button>
+				</div>
 			</form>
+			<p></p>
 		</div>
 		<p></p>
-		<a href="/contents" class="btn btn-primary">戻る</a>
-
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<a href="/contents" class="btn btn-secondary">一覧に戻る</a>
+		</div>
 
 	</main>
 	<!-- /.container -->
