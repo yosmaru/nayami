@@ -60,12 +60,10 @@ public class ContentsDaoImpl implements ContentsDao {
 	@Override
 	public void updateContents(Contents contents) {
 		String sql = "UPDATE contents "
-				+ "SET content = ?, category = ?, desire = ?, created = ? "
-				+ "WHERE id = ?";
+				+ "SET content = ?, category = ?, desire = ? WHERE id = ?";
 
 		jdbcTemplate.update(sql, contents.getContent(),
-				contents.getCategory(), contents.getDesire(), LocalDateTime.now(),
-				contents.getId());
+				contents.getCategory(), contents.getDesire(), contents.getId());
 	}
 
 	@Override
