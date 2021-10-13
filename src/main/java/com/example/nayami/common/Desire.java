@@ -2,7 +2,7 @@ package com.example.nayami.common;
 
 public enum Desire {
 	SURVIVAL("生存欲"),
-	SAFETY("安全欲"),
+	APPETITE("食欲"),
 	SEX("性欲"),
 	SLEEP("睡眠欲"),
 	LAZY("怠惰欲"),
