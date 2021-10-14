@@ -10,4 +10,5 @@ public interface ContentsService {
 	Contents getById(int id);
 	void update(Contents contents);
 	void delete(int id);
+	int getCount();
 }

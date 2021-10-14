@@ -57,8 +57,9 @@ public class ContentsController {
 	@GetMapping
 	public String index(Model model) {
 		List<Contents> list = contentsService.getAll();
-
+		int count = contentsService.getCount();
 		model.addAttribute("contentsList", list);
+		model.addAttribute("count", count);
 		model.addAttribute("title", "一覧");
 
 		return "contents/index_boot";

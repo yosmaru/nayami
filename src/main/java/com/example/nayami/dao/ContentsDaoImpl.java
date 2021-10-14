@@ -73,4 +73,9 @@ public class ContentsDaoImpl implements ContentsDao {
 		jdbcTemplate.update(sql, id);
 	}
 
+	@Override
+	public int getCount() {
+		String sql = "SELECT COUNT(*) FROM contents";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
 }

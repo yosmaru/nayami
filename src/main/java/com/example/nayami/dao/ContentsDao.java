@@ -10,4 +10,5 @@ public interface ContentsDao {
 	Contents getById(int id);
 	void updateContents(Contents contents);
 	void delete(int id);
+	int getCount();
 }

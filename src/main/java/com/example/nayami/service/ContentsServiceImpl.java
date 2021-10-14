@@ -42,4 +42,9 @@ public class ContentsServiceImpl implements ContentsService {
 		dao.delete(id);
 	}
 
+	@Override
+	public int getCount() {
+		return dao.getCount();
+	}
+
 }
