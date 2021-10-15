@@ -78,4 +78,22 @@ public class ContentsDaoImpl implements ContentsDao {
 		String sql = "SELECT COUNT(*) FROM contents";
 		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
+
+	@Override
+	public int getCountGreedy() {
+		String sql = "SELECT COUNT(*) FROM contents WHERE category='貪欲'";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+
+	@Override
+	public int getCountAnger() {
+		String sql = "SELECT COUNT(*) FROM contents WHERE category='怒り'";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+
+	@Override
+	public int getCountDelusion() {
+		String sql = "SELECT COUNT(*) FROM contents WHERE category='妄想'";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
 }

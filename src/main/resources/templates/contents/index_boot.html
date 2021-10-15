@@ -59,12 +59,21 @@
 	<div th:replace="~{block/header::headerA}"></div>
 
 	<main class="container">
-		<div class="text-center py-5 px-3">
-			<a href="/contents/create" class="btn btn-lg fw-bold border-black">モヤモヤなう</a>
+		<div class="text-center py-3 px-2">
+			<h1>
+				<a href="/contents/create"
+					class="btn btn-lg fw-bold border-black moya">モヤモヤなう</a>
+			</h1>
 		</div>
 		<div class="starter-template text-center py-5 px-3">
+			<div class="summary">
+				<h1 class="summary" th:text="'合計　　' + ${count} + '　　モヤっと'"></h1>
+				<h2 class="summary" th:text="'貪欲　　' + ${countGreedy} + '　　モヤっと'"></h2>
+				<h2 class="summary" th:text="'怒り　　' + ${countAnger} + '　　モヤっと'"></h2>
+				<h2 class="summary" th:text="'妄想　　' + ${countDelusion} + '　　モヤっと'"></h2>
+			</div>
+			
 			<h1 th:text="${title}">仮のタイトル</h1>
-			<i><h1 th:text="'合計　　' + ${count} + '　　モヤっと'"></h1></i>
 
 			<table class="table table-striped">
 				<thead>
@@ -82,7 +91,8 @@
 						<td class="col-md-2" th:text="*{created}"></td>
 						<td class="col-md-1" th:text="*{category}"></td>
 						<td class="col-md-1" th:text="*{desire}"></td>
-						<td class="col-md-2 overflow-auto text-nowrap" style="max-width:100px;" th:text="*{content}"></td>
+						<td class="col-md-2 overflow-auto text-nowrap"
+							style="max-width: 100px;" th:text="*{content}"></td>
 						<td>
 							<form th:action="@{/contents/detail}" method="post">
 								<input type="submit" class="btn btn-outline-primary"

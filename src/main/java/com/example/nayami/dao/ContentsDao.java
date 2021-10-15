@@ -11,4 +11,7 @@ public interface ContentsDao {
 	void updateContents(Contents contents);
 	void delete(int id);
 	int getCount();
+	int getCountGreedy();
+	int getCountAnger();
+	int getCountDelusion();
 }

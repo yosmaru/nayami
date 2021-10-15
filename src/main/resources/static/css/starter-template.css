@@ -8,3 +8,12 @@ body {
 	padding: 3rem 1.5rem;
 	text-align: center;
 }
+
+.moya {
+	padding-top: 3rem;
+	font-size: 44px;
+}
+
+.summary {
+	padding-top: 1rem;
+}

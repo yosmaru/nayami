@@ -58,8 +58,14 @@ public class ContentsController {
 	public String index(Model model) {
 		List<Contents> list = contentsService.getAll();
 		int count = contentsService.getCount();
+		int countGreedy = contentsService.getCountGreedy();
+		int countAnger = contentsService.getCountAnger();
+		int countDelusion = contentsService.getCountDelusion();
 		model.addAttribute("contentsList", list);
 		model.addAttribute("count", count);
+		model.addAttribute("countGreedy", countGreedy);
+		model.addAttribute("countAnger", countAnger);
+		model.addAttribute("countDelusion", countDelusion);
 		model.addAttribute("title", "一覧");
 
 		return "contents/index_boot";

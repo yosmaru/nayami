@@ -47,4 +47,19 @@ public class ContentsServiceImpl implements ContentsService {
 		return dao.getCount();
 	}
 
+	@Override
+	public int getCountGreedy() {
+		return dao.getCountGreedy();
+	}
+
+	@Override
+	public int getCountAnger() {
+		return dao.getCountAnger();
+	}
+
+	@Override
+	public int getCountDelusion() {
+		return dao.getCountDelusion();
+	}
+
 }
