@@ -67,6 +67,13 @@ public class ContentsController {
 		model.addAttribute("countAnger", countAnger);
 		model.addAttribute("countDelusion", countDelusion);
 		model.addAttribute("title", "一覧");
+		
+		//グラフ描画用の変数
+        String label[] = {"a","b","c","d","e","f","g"};
+        int point[] = {5,3,7,1,8,3,4};
+        model.addAttribute("label",label);
+        model.addAttribute("point",point);
+
 
 		return "contents/index_boot";
 
@@ -170,5 +177,6 @@ public class ContentsController {
 	public String goBackIndex(@RequestParam int id, Model model) {
 		return "redirect:/contents";
 	}
+	
 
 }
