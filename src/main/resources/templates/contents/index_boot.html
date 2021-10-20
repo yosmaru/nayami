@@ -68,10 +68,12 @@
 			</h1>
 		</div>
 		
-		<canvas id="assetGlaph"></canvas>
+		<div class="row justify-content-around">
+		<div class="col-md-4">
+		<canvas id="assetGlaph1"></canvas>
 		<script type="text/javascript" th:inline="javascript">
 		/*<![CDATA[*/
-			var ctx = document.getElementById("assetGlaph").getContext('2d');
+			var ctx = document.getElementById("assetGlaph1").getContext('2d');
 			var ChartDemo = new Chart(ctx, {
 				type: 'bar',
 				data: {
@@ -116,7 +118,60 @@
 			});
 		/*]]>*/
 		</script>
-
+		</div>
+		
+		<div class="col-md-4">
+		<canvas id="assetGlaph2"></canvas>
+		<script type="text/javascript" th:inline="javascript">
+		/*<![CDATA[*/
+			var ctx = document.getElementById("assetGlaph2").getContext('2d');
+			var ChartDemo = new Chart(ctx, {
+				type: 'line',
+				data: {
+					// コントローラーで格納したlabelを変数式で取り出すだけ。
+					labels: ["a","b","c","d","e","f","g"],
+					datasets: [
+						{
+							label: "Chart-1",
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(56, 100, 55, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(56, 100, 55, 1)'
+                            ],
+                            borderWidth: 1,
+							fill: false,
+							// 上記と同様、pointを変数式で取り出しているだけです。
+							data: [5,3,7,1,8,3,4],
+							},
+							]
+				},
+				options: {
+					responsive: true,
+					scales: {
+						y: {
+							beginAtZero: true
+						}
+					}
+				}
+			});
+		/*]]>*/
+		</script>
+		</div>
+		</div>
+		
 		<div class="starter-template text-center py-5 px-3">
 			<div class="summary">
 				<h1 class="summary" th:text="'合計　　' + ${count} + '　　モヤっと'"></h1>
